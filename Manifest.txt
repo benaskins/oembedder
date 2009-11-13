@@ -4,4 +4,4 @@ README.txt
 Rakefile
 bin/oembedder
 lib/oembedder.rb
-test/test_oembedder.rb
+spec/oembedder_spec.rb
