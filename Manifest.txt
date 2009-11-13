@@ -1,0 +1,7 @@
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+bin/oembedder
+lib/oembedder.rb
+test/test_oembedder.rb
