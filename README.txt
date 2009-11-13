@@ -1,32 +1,34 @@
 = oembedder
 
-* FIX (url)
+* github.com/benaskins/oembedder
 
 == DESCRIPTION:
 
-FIX (describe your package)
+Query providers and construct an oembed response that contains, at the very minimum, embeddable html and a url to a thumbnail image.
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+WIP
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+response = Oembed.request("http://www.youtube.com/watch?v=RF8lcGoS9Yc")
+response.html # => ...
+response.thumbnail_url # => ...
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+TBD
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+gem install oembedder
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2009 FIX
+Copyright (c) 2009 Ben Askins
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
