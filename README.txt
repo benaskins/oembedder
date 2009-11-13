@@ -4,21 +4,23 @@
 
 == DESCRIPTION:
 
-A ruby library that will query and oembed provider and construct an response (JSON only) that contains, at the very minimum, embeddable html and a url to a thumbnail image.
+A ruby library that will query an oembed provider and construct a response that contains an embeddable html string and a url to a thumbnail image.
 
 == FEATURES/PROBLEMS:
 
-WIP
+* No exception handling
+* Specs are very light on
 
 == SYNOPSIS:
 
 response = Oembed.request("http://www.youtube.com/watch?v=RF8lcGoS9Yc")
-response.html # => ...
-response.thumbnail_url # => ...
+
+response.html           #=> "<embed src='http://www.youtube.com/v/RF8lcGoS9Yc?f=videos&app=youtube_gdata&fs=1' allowfullscreen='true' type='application/x-shockwave-flash' wmode='transparent' width='425' height='344'></embed>"
+response.thumbnail_url  #=> "http://i.ytimg.com/vi/RF8lcGoS9Yc/1.jpg"
 
 == REQUIREMENTS:
 
-TBD
+TBA
 
 == INSTALL:
 
@@ -48,3 +50,8 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+Portions Copyright (c) 2009 Ben McRedmond
+
+Licensed under the MIT license
