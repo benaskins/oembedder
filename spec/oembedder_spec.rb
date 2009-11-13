@@ -3,7 +3,7 @@ require 'oembedder'
 describe Oembedder do
   describe ".request" do
     before(:each) do
-      @response = Oembed.request("http://www.youtube.com/watch?v=RF8lcGoS9Yc")
+      @response = Oembedder::Oembed.request("http://www.youtube.com/watch?v=RF8lcGoS9Yc")
     end
     
     it "should return html to embed in the page" do

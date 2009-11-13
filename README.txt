@@ -4,7 +4,7 @@
 
 == DESCRIPTION:
 
-Query providers and construct an oembed response that contains, at the very minimum, embeddable html and a url to a thumbnail image.
+A ruby library that will query and oembed provider and construct an response (JSON only) that contains, at the very minimum, embeddable html and a url to a thumbnail image.
 
 == FEATURES/PROBLEMS:
 
