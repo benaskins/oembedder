@@ -1,6 +1,6 @@
 = oembedder
 
-* github.com/benaskins/oembedder
+* http://github.com/benaskins/oembedder
 
 == DESCRIPTION:
 

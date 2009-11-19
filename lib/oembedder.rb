@@ -8,6 +8,8 @@ require 'json'
 module Oembedder
   VERSION = '0.1.0'
 
+  class UnknownProvider < StandardError; end
+
   # Global settings. To add providers:
   #   Oembedder::Settings.instance.providers[:provide_name] = {:base => "<base-api-url>"}
   # For more options see PROVIDERS
@@ -23,9 +25,9 @@ module Oembedder
   #   Oembed.request("http://www.youtube.com/watch?v=RF8lcGoS9Yc")
   class Oembed
     def self.request(url)
-      uri = URI.parse(url)
-      host = uri.host.sub("www.", "")
-      if custom_handler = settings.providers[host][:custom_handler]
+      host = host_for(url)
+      provider = provider_for(host)
+      if custom_handler = provider[:custom_handler]
         custom_handler::Request.new(url, host).response
       else
         Request.new(url, host).response
@@ -34,6 +36,15 @@ module Oembedder
 
     def self.settings
       Settings.instance
+    end
+    
+    def self.host_for(url)
+      uri = URI.parse(url)
+      uri.host.sub("www.", "")
+    end
+
+    def self.provider_for(host)
+      settings.providers[host] || raise(UnknownProvider.new)
     end
   end
 
